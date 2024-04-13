@@ -72,7 +72,7 @@ impl NotificationService {
         return match request {
             Ok(f) => match f.json::<SubscriberRequest>().await {
                 Ok(x) => Ok(x),
-                Err(y) => Err(compose_error_response(Status::NotFound,
+                Err(_y) => Err(compose_error_response(Status::NotFound,
                     String::from("Already unsubscriber to the topic.")))
             },
             Err(e) => Err(compose_error_response(Status::NotFound, e.to_string()))
