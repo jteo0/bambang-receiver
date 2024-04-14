@@ -77,7 +77,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement receive function in Notification controller.`
     -   [x] Commit: `Implement list_messages function in Notification service.`
     -   [x] Commit: `Implement list function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
+    -   [x] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -90,3 +90,8 @@ This is the place for you to write reflections:
 2. Rust juga memiliki variabel static, namun harus didefinisikan lifetime 'static variabel dan bersifat Sync, yakni harus dibuat menjadi thread-safe (dengan membuatnya tidak bisa diakses oleh banyak thread sekaligus)
 
 #### Reflection Subscriber-2
+1. Saya temukan bahwa file src/lib.rs mendefinisikan banyak hal yang digunakan pada file lain seperti type Result, Error, struct ErrorResponse, dll.
+
+2. Observer membuat suatu objek dapat diberi notifikasi akan suatu objek lain yang sedang di observasi (dalam konteks ini, subscriber mengobservasi suatu product_type). product_type didalamnya akan memiliki list yang berisi subscriber yang bisa ditambahkan dengan subscriber baru dan dapat dikurangi darinya jika ada yang unsubscribe. Jika ada lebih dari 1 instansi main app, setiap instansi akan memiliki observer patternnya sendiri dan tidak membagi data. Untuk membuat semua instansi <i>in sync</i>, bisa digunakan penyimpanan data yang dapat diakses oleh semua instansi.
+
+3. Saya tidak membuat tes sendiri ataupun _enhance documentation_ pada koleksi Postman.
