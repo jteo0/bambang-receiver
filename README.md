@@ -66,7 +66,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Create Notification database and Notification repository struct skeleton.`
     -   [x] Commit: `Implement add function in Notification repository.`
     -   [x] Commit: `Implement list_all_as_string function in Notification repository.`
-    -   [ ] Write answers of your learning module's "Reflection Subscriber-1" questions in this README.
+    -   [x] Write answers of your learning module's "Reflection Subscriber-1" questions in this README.
 -   **STAGE 3: Implement services and controllers**
     -   [x] Commit: `Create Notification service struct skeleton.`
     -   [x] Commit: `Implement subscribe function in Notification service.`
@@ -85,5 +85,8 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+1. RwLock<> membedakan user menjadi reader dan writer, dimana hanya bisa ada satu writer (satu thread yang melakukan modifikasi) dan banyak reader. Mutex<> tidak membedakan user menjadi reader atau writer, melainkan hanya memperbolehkan satu thread untuk mendapatkan akses. Karena Bambangshop receiver bersifat multi-threaded, kita menggunakan RwLock<>.
+
+2. Rust juga memiliki variabel static, namun harus didefinisikan lifetime 'static variabel dan bersifat Sync, yakni harus dibuat menjadi thread-safe (dengan membuatnya tidak bisa diakses oleh banyak thread sekaligus)
 
 #### Reflection Subscriber-2
